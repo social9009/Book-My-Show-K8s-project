@@ -10,8 +10,8 @@ pipeline {
 
     environment {
         SCANNER_HOME = tool 'sonar-scanner'
-        DOCKER_IMAGE = 'kastrov/bms:latest'
-        EKS_CLUSTER_NAME = 'kastro-eks'
+        DOCKER_IMAGE = 'hitfast/bms:latest'
+        EKS_CLUSTER_NAME = 'hitfast-eks'
         AWS_REGION = 'us-east-1'
     }
 
@@ -24,7 +24,7 @@ pipeline {
 
         stage('Checkout from Git') {
             steps {
-                git branch: 'main', url: 'https://github.com/KastroVKiran/Book-My-Show.git'
+                git branch: 'main', url: 'https://github.com/social9009/Book-My-Show-K8s-project.git'
                 sh 'ls -la'  // Verify files after checkout
             }
         }
